@@ -20,7 +20,7 @@ public class HouseContract implements Contract {
             throw new IllegalArgumentException("Transaction must have one command");
         }
         Command command = tx.getCommand(0); //list of public keys who gonna sign the transaction with the type
-        List<PublicKey> requiredSigners = command.getSigners();
+        List<PublicKey> requiredSigners = command.getSigners(); //assinantes
         CommandData commandType = command.getValue(); //type of the command
 
         if(commandType instanceof Register){
